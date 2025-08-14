@@ -54,6 +54,15 @@ public class ProductTest
             response.prettyPrint();
         }
 
+        @Test(testName = "Update the Product")
+        public void testupdateproduct()
+        {
+            Response response = product.updateproduct();
+            Assert.assertEquals(response.getStatusCode(),200);
+            log.info("Update Product");
+            System.out.println("Getting Status Code is: " + response.getStatusCode());
+            response.prettyPrint();
+        }
 
 
 }

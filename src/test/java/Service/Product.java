@@ -58,5 +58,21 @@ public class Product extends BaseService {
     }
 
 
+    public Response updateproduct()
+    {
+
+        Map<String,Object> updateproductdata = new HashMap<>();
+
+        updateproductdata.put("price", 62.75);
+        updateproductdata.put("title", "Denim Pant - Price Updated");
+
+        return request
+                .body(updateproductdata)
+                .patch("/products/" + 21);
+
+    }
+
+
+
 
 }
