@@ -72,6 +72,13 @@ public class Product extends BaseService {
 
     }
 
+    public Response deleteproduct()
+    {
+        return request
+                .delete("/products/"+ 15);
+    }
+
+
 
 
 

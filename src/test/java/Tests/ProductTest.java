@@ -15,7 +15,7 @@ public class ProductTest
     Product product = new Product();
 
 
-        @Test(testName = "Get all products")
+        @Test(testName = "Get all products" , priority = 5)
         public void testgetallproduct()
         {
             Response response = product.getallproducts();
@@ -28,7 +28,7 @@ public class ProductTest
         }
 
 
-        @Test(testName = "Get Single product")
+        @Test(testName = "Get Single product" , priority = 4)
         public void testgetsingleproduct()
         {
             List<Response> responses = product.getproductbysingleid();
@@ -44,7 +44,7 @@ public class ProductTest
             }
         }
 
-        @Test(testName = "Add New Product")
+        @Test(testName = "Add New Product", priority = 1)
         public void testaddproduct()
         {
             Response response = product.createproduct();
@@ -54,7 +54,7 @@ public class ProductTest
             response.prettyPrint();
         }
 
-        @Test(testName = "Update the Product")
+        @Test(testName = "Update the Product" , priority = 2)
         public void testupdateproduct()
         {
             Response response = product.updateproduct();
@@ -64,5 +64,15 @@ public class ProductTest
             response.prettyPrint();
         }
 
+        @Test(testName = "Delete the product", priority = 3)
+
+        public void testdeleteproduct()
+        {
+            Response response = product.deleteproduct();
+            Assert.assertEquals(response.getStatusCode(), 200);
+            log.info("Delete the product");
+            System.out.println("Getting Status Code is: " + response.getStatusCode());
+            System.out.println("Getting Status Code is: " + product.getallproducts());
+        }
 
 }
