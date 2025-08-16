@@ -8,6 +8,7 @@
         </groups>
         <classes>
             <class name="Tests.ProductTest"></class>
+            <class name="Tests.CartTest"></class>
         </classes>
     </test>
    
