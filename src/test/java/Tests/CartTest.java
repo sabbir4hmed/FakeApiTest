@@ -15,7 +15,7 @@ public class CartTest {
 
     private static final Logger log = LoggerFactory.getLogger(CartTest.class);
 
-    @Test(testName = "Get all Carts", priority = 1)
+    @Test(testName = "Get all Carts", priority = 5)
     public void getallcartlist()
     {
         Response response = cartTest.getallcart();
@@ -24,7 +24,7 @@ public class CartTest {
         System.out.println("The status code is" + response.statusCode());
     }
 
-    @Test(testName = "Get single status code", priority = 2)
+    @Test(testName = "Get single status code", priority = 4)
     public void getsingleproductcart()
     {
         List<Response> responses = cartTest.getsinglecart();
@@ -51,13 +51,23 @@ public class CartTest {
     }
 
 
-    @Test(testName = "Updae the product cart", priority = 3)
+    @Test(testName = "Updae the product cart", priority = 2)
     public void updateproductcart()
     {
         Response response = cartTest.updatecart();
         Assert.assertEquals(response.getStatusCode(), 200);
         log.info("Upadte the product cart");
         System.out.println("The status code is: " + response.statusCode());
+        response.prettyPrint();
+    }
+
+    @Test(testName = "Delete the cart", priority = 3)
+    public void deletecart()
+    {
+        Response response = cartTest.deletecart();
+        Assert.assertEquals(response.getStatusCode(), 200);
+        System.out.println("The status code is: "+ response.statusCode());
+        log.info("Delete the cart");
         response.prettyPrint();
     }
 

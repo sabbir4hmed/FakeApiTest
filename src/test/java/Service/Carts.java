@@ -74,6 +74,10 @@ public class Carts extends BaseService {
     }
 
 
-
+    public Response deletecart()
+    {
+        return request
+                .delete("/carts/"+ 6);
+    }
 
 }
