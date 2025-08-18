@@ -8,6 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.security.PublicKey;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsersTest {
 
@@ -15,13 +17,28 @@ public class UsersTest {
 
     private static final Logger log = LoggerFactory.getLogger(UsersTest.class);
 
-    @Test
+    @Test(testName = "Get all users", priority = 1)
     public void getalluser()
     {
         Response response = users.getallusers();
         Assert.assertEquals(response.getStatusCode(), 200);
         log.info("Get all users");
         System.out.println("The status code is: " + response.statusCode());
+    }
+
+    @Test(testName = "Get all single user", priority = 2)
+    public void getsingleuser()
+    {
+        List<Response> responses = new ArrayList<>();
+
+        for(int i = 1; i< responses.size(); i++)
+        {
+            Response response = responses.get(i);
+            Assert.assertEquals(response.getStatusCode(), 200);
+            log.info("Get single user");
+            System.out.println("The status code is: " + response.statusCode());
+
+        }
     }
 
 

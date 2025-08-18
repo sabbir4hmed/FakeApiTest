@@ -9,6 +9,7 @@
         <classes>
             <class name="Tests.ProductTest"></class>
             <class name="Tests.CartTest"></class>
+            <class name="Tests.UsersTest"></class>
         </classes>
     </test>
    
