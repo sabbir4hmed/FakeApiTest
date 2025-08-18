@@ -41,6 +41,18 @@ public class UsersTest {
         }
     }
 
+    @Test(testName = "Add a user", priority = 3)
+    public void adduser()
+    {
+        Response response = users.adduser();
+        Assert.assertEquals(response.getStatusCode(), 201);
+        log.info("Add a user");
+        System.out.println("The status code is: " + response.statusCode());
+        response.prettyPrint();
+    }
+
+
+
 
 
 }
